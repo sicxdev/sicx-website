@@ -13,10 +13,7 @@ content:
     type: file
     path: site/content/investments.json
     format: json
-    list:
-      collapsible:
-        collapsed: true
-        summary: "{fields.order} · {fields.name}"
+    list: true
     fields:
       - name: order
         label: Volgorde (1 = bovenaan)
@@ -90,4 +87,3 @@ content:
       - name: not_found_text
         label: Tekst op de 404-pagina
         type: string
-
