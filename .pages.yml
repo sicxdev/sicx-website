@@ -16,8 +16,11 @@ content:
     list:
       collapsible:
         collapsed: true
-        summary: "{name}"
+        summary: "{fields.order} · {fields.name}"
     fields:
+      - name: order
+        label: Volgorde (1 = bovenaan)
+        type: number
       - name: name
         label: Naam
         type: string
@@ -87,3 +90,4 @@ content:
       - name: not_found_text
         label: Tekst op de 404-pagina
         type: string
+
