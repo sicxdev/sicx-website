@@ -4,17 +4,13 @@
     "category": "Venture capital fund",
     "description": "Dutch Founders Fund (DFF) is a venture capital firm founded by experienced entrepreneurs with backgrounds in successful companies such as WeTransfer, Just Eat, Treatwell, and fonQ. DFF focuses on investing in ambitious founders building innovative, high-growth businesses. With a no-nonsense, hands-on approach, the fund prioritizes entrepreneurial drive, strong execution, and long-term value creation.",
     "logo": "/media/logos/dutch-founders-fund.svg",
-    "url": "",
-    "year": "",
     "visible": true
   },
   {
     "name": "CX Sport",
     "category": "Early-stage venture",
     "description": "CX Sport develops horseshoes that make shoeing simpler, faster and more effective — for the farrier and the horse. Its first line, the Ultimo series, is a pre-shaped steel shoe with an anatomical fit, precise nail holes and clear alignment references, so farriers spend less time adjusting and more time on the work that matters. Developed with input from working farriers, CX Sport combines traditional craftsmanship with practical innovation, always with the comfort and soundness of the horse at its core.",
-    "logo": "",
-    "url": "",
-    "year": "",
+    "logo": "/media/logos/cx-sport-logozwartrgb.png",
     "visible": true
   }
 ]
