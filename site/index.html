@@ -411,7 +411,14 @@
   if (root.getAttribute('data-page') === '404') return;
   get('/content/investments.json').then(function (list) {
     if (!Array.isArray(list)) return;
-    list = list.filter(function (x) { return x && x.name && x.visible !== false; });
+    list = list.filter(function (x) { return x && x.name && x.visible !== false; })
+      .map(function (x, i) { return { x: x, i: i }; })
+      .sort(function (a, b) {
+        var oa = parseFloat(a.x.order), ob = parseFloat(b.x.order);
+        oa = isNaN(oa) ? 1e6 + a.i : oa; ob = isNaN(ob) ? 1e6 + b.i : ob;
+        return oa - ob || a.i - b.i;
+      })
+      .map(function (o) { return o.x; });
     if (!list.length) return;
     var ol = document.getElementById('holdings');
     ol.textContent = '';
