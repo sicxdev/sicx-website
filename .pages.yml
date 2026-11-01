@@ -1,0 +1,89 @@
+# Pages CMS — beheerscherm voor sicx.nl
+media:
+  - name: logos
+    label: Logo's
+    input: site/media/logos
+    output: /media/logos
+    extensions: [svg, png, webp]
+    rename: safe
+
+content:
+  - name: investments
+    label: Investeringen
+    type: file
+    path: site/content/investments.json
+    format: json
+    list:
+      collapsible:
+        collapsed: true
+        summary: "{name}"
+    fields:
+      - name: name
+        label: Naam
+        type: string
+        required: true
+      - name: category
+        label: Categorie
+        type: select
+        options:
+          values: [Listed equity, Private equity fund, Venture capital fund, Real estate, Early-stage venture]
+      - name: description
+        label: Omschrijving
+        type: text
+      - name: logo
+        label: Logo (SVG of PNG, donker op transparant)
+        type: image
+        options:
+          media: logos
+      - name: url
+        label: Website (optioneel, begint met https://)
+        type: string
+      - name: year
+        label: Jaar van investering (optioneel)
+        type: string
+      - name: visible
+        label: Tonen op de website
+        type: boolean
+        default: true
+
+  - name: site
+    label: Site-instellingen en teksten
+    type: file
+    path: site/content/site.json
+    format: json
+    fields:
+      - name: background
+        label: Achtergrondkleur (hexcode, bijv. #161719)
+        type: string
+        required: true
+        pattern: "^#[0-9A-Fa-f]{6}$"
+      - name: name
+        label: Bedrijfsnaam (voorpagina en investeringspagina)
+        type: string
+      - name: tagline
+        label: Regel onder de bedrijfsnaam
+        type: string
+      - name: est
+        label: Oprichtingsregel (rechtsonder)
+        type: string
+      - name: info
+        label: Tekst bij het info-icoon
+        type: text
+      - name: kvk
+        label: KvK-nummer (verschijnt na de info-tekst)
+        type: string
+      - name: email
+        label: E-mailadres (wordt gekopieerd via het envelop-icoon)
+        type: string
+      - name: email_label
+        label: Woord voor het e-mailadres in de typemachine-tekst
+        type: string
+      - name: copied_text
+        label: Melding na het kopiëren van het e-mailadres
+        type: string
+      - name: investments_title
+        label: Titel van de investeringspagina
+        type: string
+      - name: not_found_text
+        label: Tekst op de 404-pagina
+        type: string
